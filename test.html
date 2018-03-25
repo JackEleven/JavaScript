@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset='UTF-8'>
+		<title>A example of sale</title>
+		<!-- use CSS linked file example-->
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<style>
+			p {color : blue;}
+			ul {margin: 0; list-style-type: upper-roman;}
+			img.float-left {float: left; margin-right: 60px; margin-bottom: 10px;}
+			.clear {clear: both;}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+		<h1> h1 features:</h1>
+		
+		<!--img src="test.png" width="320" height="240" class="float-left"-->
+		<ul type="square">
+			<li>feature 1</li>
+			<li>feature 2</li>
+			<li>feature 3</li>
+		</ul>
+		
+		<P class="clear">tag p paragraph sentences go here </P>
+		
+		<!-- directly use CSS example -->
+		<P style="color:green"> tag p second <span style="font-weight: bold">paragraph</span> sentences go here </P>
+
+		<p>make an appointment</p>
+		<form id="f1">
+		 <!--p> Date: <input type="date" name="date1" /></p-->
+		 <p> Date: <input type="text" id="datepick1"/></p>
+		 <p> Name: <input type="text" value="your name" name="name1" id="name" tabindex="10"/></p>
+		 <p> Email: <input type="text" value="your email" name="email1" id="email" tabindex="20"/></p>
+		 <p> Notes: <textarea name="feedback"></textarea></p>
+		 <br><br><button onclick="submit();">Submit</button>
+		</form>
+		
+		<div id='media'>
+		<h1> HTML5 video</h1>
+		<video id='video1' width='320' height='160' controls>
+			<source src="media/MySky.mp4" type="video/mp4">
+			<p> your browser doesn't support the HTML5 video feature.</p>
+		</video>
+		</div>
+		<!--script src="main.js" type="text/javascript">// it is better to link js file from here above closing body tag to avoid slowing rendering</script-->
+		<!--script src="dtt//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script-->
+		<!--script src="jquery-1.11.2.js"></script-->
+		
+		<script type="text/javascript" src="jquery-ui-1.11.1/external/jquery/jquery.js"></script>
+		<script type="text/javascript" src="jquery-ui-1.11.1/jquery-ui.js"></script>
+		<script type="text/javascript">
+			$("document").ready(function() {
+			
+				$("#datepick1").datepicker({
+				firstDay: 1,
+				showButtonPanel: true,
+                currentText: "Today",
+                closeText: "Close"});
+				
+				$("body").append("<p>The page just loaded!</p>");
+			});
+		</script>
+		<script>
+            var arr = [1, "item2", 6]; // define arrays
+			var person = {"first_name" : "mike", "last_name": "look"}; // define objects
+			
+			// how to replace the above <div id="paragraph"> dynamically
+			/*
+			var output='';
+			for (var i = 0; i < arr.length; ++i) {
+				output += '<li>' + arr[i] + '</li>';
+			}
+			var update = document.getElementById('paragraph');
+			update.innerHTML = output;*/
+			
+			// display the date and time
+			var dt = new Date();
+			document.write("<br><br><br>");
+			document.write(dt.toLocaleDateString());
+			document.write("            ");
+			document.write(dt.toLocaleTimeString());
+			// $("p").fadeOut(4000);
+		</script>		
+	</body>
+</html>
+
+<!--references------
+sites: schema.org
+improve search engine: http://www.google.com/ webmasters/tools/richsnippets
+find outline: https://gsnedders.html5.org/outliner/
+-->
